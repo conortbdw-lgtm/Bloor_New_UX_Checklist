@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Bloor Homes - New UX Checklist</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #001B36;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 180vh;
+				margin: 0;
+				overflow-x: hidden;
+			}
+			.logo-container {
+				margin-top: 130px;
+				background-color: transparent;
+				border-radius: 8px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+				height: 1260px;
+				margin-bottom: 10px;
+			}
+			.title-container {
+				background-color: white;
+				padding: 20px;
+				border-radius: 8px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+				width: 1260px;
+				margin-bottom: 20px;
+			}
+			.title-container2 {
+				background-color: transparent;
+				padding: 20px;
+				border-radius: 8px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+				width: 1260px;
+				margin-bottom: 20px;
+			}
+			h1, h3 {
+				text-align: center;
+				color: #393939;
+				margin: 0;
+			}
+			.checklist-wrapper {
+				display: flex;
+				justify-content: space-between;
+				gap: 20px;
+				margin-bottom: 20px;
+			}
+			.checklist-container {
+				background-color: white;
+				padding: 20px;
+				border-radius: 8px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+				width: 600px;
+			}
+			.checklist-item {
+				margin: 10px 0;
+			}
+			.checklist-item label {
+				margin-left: 10px;
+			}
+			input[type="checkbox"] {
+				transform: scale(2);
+				margin-right: 10px;
+			}
+			button {
+				background-color: #007BFF;
+				color: white;
+				padding: 10px;
+				border: none;
+				border-radius: 5px;
+				width: 100%;
+				cursor: pointer;
+				font-size: 16px;
+			}
+			button:hover {
+				background-color: #0056b3;
+			}
+			.reset-button {
+				background-color: #FF5733;
+				margin-top: 20px;
+				width: 350px;
+			}
+			.reset-button:hover {
+				background-color: #c94f2f;
+			}
+			.message {
+				margin-top: 20px;
+				color: green;
+				font-size: 20px;
+				font-weight: bold;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="logo-container">
+			<img src="images/Bloor_Logo_Transparent.png" width="350" alt="logo"/>
+		</div>
+	<div class="title-container">
+			<h1>
+	  			New UX Checklist
+  			</h1>
+		</div>
+	<div class="title-container">
+			<h3>
+				Pre Flight Details - Check with Handler
+			</h3>
+			<div class="checklist-item">
+				<input type="checkbox" id="item1" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item1">
+					Are screen walls to be stepped or sloped?
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item2" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item2">
+					Are screen walls to be have piers? If so at what spacing?
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item3" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item3">
+					If piers are required are they to sit flush with the brick on the facing side of the wall, or be centered?
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item4" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item4">
+					Which map would they like us to use? (Google, Earth, Bing, Apple Maps)
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item5" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item5">
+					Confirm any future phasing
+				</label>
+			</div>
+		</div>
+		<div class="title-container">
+			<h3>
+				Site - Geometry
+			</h3>
+			<div class="checklist-item">
+				<input type="checkbox" id="item6" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item6">
+					Build & level all roads, paths, shared & private driveways
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item7" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item7">
+					Build all front of house paths and rear patios (Apply an extrude modifier of -100mm)
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item8" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item8">
+					Build all grassed areas
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item9" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item9">
+					Build all leap areas & POS Areas if required (Populate with leap equipment)
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item10" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item10">
+					Apply surface materials, link all distance textures within the materials to the correct objects (Camber splines, road markings, kerbs/edging)
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item11" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item11">
+					Add in all drop kerbs to geometry only (Drop kerbs to be 900mm/1000mm long)
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item12" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item12">
+					Add in all kerbs (Duplicate the paths, delete all modifiers, remove materials and keep only the splines needed for the Kerbs, this helps prevent gaps)
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item13" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item13">
+					Add in all edging (Edging required wherever there is a material change, only exception is flag stone paving which doesnt use edging)
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item14" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item14">
+					Select all grass surfaces by material & drop -25mm
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item15" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item15">
+					Add in all streetlighting
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item16" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item16">
+					Add in all soft landscaping to site
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item17" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item17">
+					Add in all soft landscaping to POS Areas
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item47" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item47">
+					Add in Pumping Stations if required
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item48" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item48">
+					Add in all Tactile Paving/Corduroy decals
+				</label>
+			</div>
+		</div>
+		<div class="checklist-wrapper">
+			<div class="checklist-container spin-checklist">
+				<h3>
+					Site - Railclone
+				</h3>
+				<div class="checklist-item">
+					<input type="checkbox" id="item18" onclick="checkAllCompleted('spin-checklist')">
+					<label for="item18">
+						Retaining Walls
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item19" onclick="checkAllCompleted('spin-checklist')">
+					<label for="item19">
+						Screen Walls
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item20" onclick="checkAllCompleted('spin-checklist')">
+					<label for="item20">
+						Fences (Standard Details may vary check plans)
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item21" onclick="checkAllCompleted('spin-checklist')">
+					<label for="item21">
+						Knee Railing
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item22" onclick="checkAllCompleted('spin-checklist')">
+					<label for="item22">
+						Estate Railings etc.
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item23" onclick="checkAllCompleted('spin-checklist')">
+					<label for="item23">
+						Railings next to steps (Steps of 3 or more require handrails on one side)
+					</label>
+				</div>
+
+				<div class="checklist-item">
+					<input type="checkbox" id="item24" onclick="checkAllCompleted('spin-checklist')">
+					<label for="item24">
+						VR Hoarding
+					</label>
+				</div>
+				<button onclick="clearChecklist('spin-checklist')">
+					Clear All
+				</button>
+			</div>
+			<div class="checklist-container vr-checklist">
+				<h3>
+					Site - Forest Pack
+				</h3>
+				<div class="checklist-item">
+					<input type="checkbox" id="item25" onclick="checkAllCompleted('vr-checklist')">
+					<label for="item25">
+						Shrubs
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item26" onclick="checkAllCompleted('vr-checklist')">
+					<label for="item26">
+						Hedges
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item27" onclick="checkAllCompleted('vr-checklist')">
+					<label for="item27">
+						Cars
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item28" onclick="checkAllCompleted('vr-checklist')">
+					<label for="item28">
+						Trees (Site & Greenspace)
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item29" onclick="checkAllCompleted('vr-checklist')">
+					<label for="item29">
+						Climbers (If required)
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item30" onclick="checkAllCompleted('vr-checklist')">
+					<label for="item30">
+						Sheds (If required)
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item31" onclick="checkAllCompleted('vr-checklist')">
+					<label for="item31">
+						Cycle Sheds (If required)
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item32" onclick="checkAllCompleted('vr-checklist')">
+					<label for="item32">
+						ASHP's (If required)
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item33" onclick="checkAllCompleted('vr-checklist')">
+					<label for="item33">
+						EV Chargers on posts
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item34" onclick="checkAllCompleted('vr-checklist')">
+					<label for="item34">
+						Grass Standard (To small grass areas)
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item35" onclick="checkAllCompleted('vr-checklist')">
+					<label for="item35">
+						Grass Greenspace (To large grass areas)
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item36" onclick="checkAllCompleted('vr-checklist')">
+					<label for="item36">
+						Meadow Grass (If required)
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item37" onclick="checkAllCompleted('vr-checklist')">
+					<label for="item37">
+						Bulb Planting (If required)
+					</label>
+				</div>
+				<div class="checklist-item">
+					<input type="checkbox" id="item38" onclick="checkAllCompleted('vr-checklist')">
+					<label for="item38">
+						Any remaining planting (Native Shrubs, Swale, Aquatic Planting etc)
+					</label>
+				</div>
+				<button onclick="clearChecklist('vr-checklist')">Clear All</button>
+			</div>
+		</div>
+		<div class="title-container">
+			<h3>
+				QC, Testing & Fixing
+			</h3>
+			<div class="checklist-item">
+				<input type="checkbox" id="item39" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item39">
+					Render some tests, focusing on select parts of the site at a time (Alot of site issues arent visible unitl render time)
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item40" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item40">
+					No gaps between any site geometry?
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item41" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item41">
+					No gaps between paths and kerbs/edging?
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item42" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item42">
+					Excludes set up on all Grass FP's? (All grass FP's should have all Hedges & Planting areas excluded)
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item43" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item43">
+					Check FP's for overhang onto paths etc (EG. Meadow Grass splines to be pulled in away from edges to prevent overlap)
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item44" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item43">
+					Make sure all splines which are being used by a FP or RC are placed in the respective layers (#FP_Splines, #RC_Splines)
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item44" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item44">
+					Clear file of all unused assets (Scene should contain only the FP, RC and Geometry being used in the site, nothing hidden below)
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item45" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item45">
+					Run Sini Forensics, remove all animation and empty layers
+				</label>
+			</div>
+			<div class="checklist-item">
+				<input type="checkbox" id="item46" onclick="checkAllCompleted('spin-checklist')">
+				<label for="item46">
+					Ensure all FP's and RC's are in their respective layers and that they're not hidden
+				</label>
+			</div>
+		</div>
+		<button class="reset-button" onclick="confirmReset()">
+			Reset All
+		</button>
+		<script>
+			function clearChecklist(checklistClass) {
+				const checklist = document.querySelector(`.${checklistClass}`);
+				const checkboxes = checklist.querySelectorAll('input[type="checkbox"]');
+				checkboxes.forEach(cb => cb.checked = false);
+				checkAllCompleted(checklistClass);
+			}
+			function confirmReset() {
+				if (confirm("Are you sure you want to reset all checkboxes?")) {
+					resetChecklist();
+				}
+			}
+			function resetChecklist() {
+				const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+				checkboxes.forEach(cb => cb.checked = false);
+				document.getElementById('spin-message').style.display = 'none';
+				document.getElementById('vr-message').style.display = 'none';
+			}
+		</script>
+	</body>
+</html>
